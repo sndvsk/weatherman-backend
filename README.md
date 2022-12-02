@@ -51,14 +51,20 @@ This project is the technical task and consists of two repositories:
 1.  To start project in schedule robot mode:
 
     ```sh
-    java -Dweatherman.weatherapi.service.secret_key=your_api_key -Dweatherman.robot.cron_interval='0 * * ? * *' -jar ./target/weatherman-1.0-SNAPSHOT.jar 
+    java -Dweatherman.weatherapi.service.secret_key=your_api_key -Dweatherman.robot.cron_interval='0 0 * ? * *' -jar ./target/weatherman-1.0-SNAPSHOT.jar 
     ```
     
     This cron_interval means robot does the scheduled task once an hour
 
     ```sh
-    cron_interval='0 * * ? * *'
+    .cron_interval='0 0 * ? * *'
     ```
+    
+    If you want to test whether the robot is working, use:
+    ```sh
+    .cron_interval='0/10 * * ? * *'
+    ```
+    It will make the robot to do the task every 10 seconds. <br/>
     
     For more details about cron visit: [Crontab generator](https://codebeautify.org/crontab-format)
 

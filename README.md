@@ -39,12 +39,27 @@ This project is the technical task and consists of two repositories:
    Put your [WeatherApi](https://www.weatherapi.com/) Api key instead of your_api_key 
 
    ```sh
-   java -Dweatherman.weatherapi.service.secret_key=_your_api_key -jar ./target/weatherman-1.0-SNAPSHOT.jar
+   java -Dweatherman.weatherapi.service.secret_key=your_api_key -jar ./target/weatherman-1.0-SNAPSHOT.jar
    ```
 6.  Run the [weatherman-frontend](https://github.com/sndvsk/weatherman-frontend) <br/>
     
     Check how to run it: [weatherman-frontend](https://github.com/sndvsk/weatherman-frontend)
 
 7. Now you can use the project!
+
+## Robot
+1.  To start project in schedule robot mode:
+
+    ```sh
+    java -Dweatherman.weatherapi.service.secret_key=your_api_key -Dweatherman.robot.cron_interval='0 * * ? * *' -jar ./target/weatherman-1.0-SNAPSHOT.jar 
+    ```
+    
+    This cron_interval means robot does the scheduled task once an hour
+
+    ```sh
+    cron_interval='0 * * ? * *'
+    ```
+    
+    For more details about cron visit: [Crontab generator](https://codebeautify.org/crontab-format)
 
 Credentials for the database can be changed in __src/main/resources/application.properties__.

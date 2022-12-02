@@ -172,7 +172,7 @@
 					<archive>
 						<manifest>
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-							<mainClass>com.example.weatherman.WeathermanApplication</mainClass>
+							<mainClass>com.example.weatherman.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
